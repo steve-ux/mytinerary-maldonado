@@ -15,9 +15,6 @@ function Footer() {
           <a href="https://www.youtube.com/" target="_blank"><img className="socialNetworks" src={YouTube}/></a>
           <a href="https://www.facebook.com/mytinerary" target="_blank"><img className="socialNetworks" src={Facebook}/></a>
       </div>
-      <div>
-        <span>Call us: <a href="tel: +1 408 20 3500 0202">+1 408 20 3500 0202</a></span>
-      </div>
       <div className="menu">
         <dl>
           <dt>Home</dt>

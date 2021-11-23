@@ -92,7 +92,7 @@ export default class App extends Component {
     return (
       <div className="carrusel">
       <h2 className="titleCarousel">"Popular MyTineraries"</h2>
-      <Carousel w="50" id="carouselExampleControls">
+      <Carousel w="100" id="carouselExampleControls">
        
              
              <Carousel.Inner>
