@@ -10,75 +10,75 @@ export default class App extends Component {
       cities: [
         {
         "id":1,
-        "name":"New York",
+        "name":"New York, USA",
         "image": "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "zona":"eeuu",
+        "zona":"North America",
       },
     {
         "id":2,
-        "name":"Miami",
+        "name":"Miami, USA",
         "image":"https://th.bing.com/th/id/OIP.tt5hrDW-NkqjZE4DC72GewHaE6?pid=ImgDet&rs=1",
-        "zona":"eeuu",
+        "zona":"North America",
       },
     {
         "id":3,
-        "name":"Disney",
+        "name":"Orlando, USA",
         "image":"https://images.pexels.com/photos/6921010/pexels-photo-6921010.jpeg?cs=srgb&dl=pexels-bo-zhong-6921010.jpg&fm=jpg",
-        "zona":"eeuu",
+        "zona":"North America",
       },
     {
         "id":4,
-        "name":"Hollywood",
+        "name":"California, USA",
         "image":"https://images.pexels.com/photos/5246036/pexels-photo-5246036.jpeg?cs=srgb&dl=pexels-masbet-christianto-5246036.jpg&fm=jpg",
-        "zona":"eeuu",
+        "zona":"North America",
       },
     {
         "id":5,
-        "name":"Isla de Pascua",
+        "name":"Easter Island, Chile",
         "image":"https://images.pexels.com/photos/2819082/pexels-photo-2819082.jpeg?cs=srgb&dl=pexels-andrea-vera-sasso-2819082.jpg&fm=jpg",
-        "zona":"america",
+        "zona":"South America",
       },
     {
         "id":6,
-        "name":"Buenos Aires",
+        "name":"Buenos Aires, Argentina",
         "image":"https://images.pexels.com/photos/2438323/pexels-photo-2438323.jpeg?cs=srgb&dl=pexels-wesley-souza-2438323.jpg&fm=jpg",
-        "zona":"america",
+        "zona":"South America",
       },
     {
         "id":7,
-        "name":"Machu Pichu",
+        "name":"Macchu Picchu, Peru",
         "image":"https://images.pexels.com/photos/5503236/pexels-photo-5503236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "zona":"america",
+        "zona":"South America",
       },
     {
         "id":8,
-        "name":"Rio de Janeiro",
+        "name":"Rio de Janeiro, Brazil",
         "image":"https://images.pexels.com/photos/2876407/pexels-photo-2876407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "zona":"america",
+        "zona":"South America",
       },
     {
         "id":9,
-        "name":"Suiza",
+        "name":"Bern, Switzerland",
         "image":"https://images.pexels.com/photos/205001/pexels-photo-205001.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "zona":"europa",
+        "zona":"Europe",
       },
     {
         "id":10,
-        "name":"Barcelona",
+        "name":"Barcelona, Spain",
         "image":"https://images.pexels.com/photos/175934/pexels-photo-175934.jpeg?cs=srgb&dl=pexels-tyler-hendy-175934.jpg&fm=jpg",
-        "zona":"europa",
+        "zona":"Europe",
       },
     {
         "id":11,
-        "name":"Londres",
+        "name":"London, United Kingdom",
         "image":"https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?cs=srgb&dl=pexels-pixabay-460672.jpg&fm=jpg",
-        "zona":"europa",
+        "zona":"Europe",
       },
     {
         "id":12,
-        "name":"Roma",
+        "name":"Rome, Italy",
         "image":"https://images.pexels.com/photos/2676582/pexels-photo-2676582.jpeg?cs=srgb&dl=pexels-griffin-wooldridge-2676582.jpg&fm=jpg",
-        "zona":"europa",
+        "zona":"Europe",
       },
   ]
 }
@@ -100,7 +100,7 @@ export default class App extends Component {
                  <Carousel.Item active>
               {this.state.cities
               .filter(element => {
-              return element.zona == "eeuu"
+              return element.zona === "North America"
               })
               .map((element, index,) =>  (
                 <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '20rem' }}>
@@ -119,7 +119,7 @@ export default class App extends Component {
                 <Carousel.Item>
               {this.state.cities
               .filter(element => {
-              return element.zona == "europa"
+              return element.zona === "Europe"
               })
               .map((element, index,) =>  (
                 <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '20rem' }}>
@@ -136,7 +136,7 @@ export default class App extends Component {
                 <Carousel.Item>
               {this.state.cities
               .filter(element => {
-              return element.zona == "america"
+              return element.zona === "South America"
               })
               .map((element, index,) =>  (
                 <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '20rem' }}>
