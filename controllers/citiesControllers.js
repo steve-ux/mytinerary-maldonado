@@ -1,3 +1,5 @@
+const Ciudad = require('../models/Ciudad')
+
 const cities = [
     {
     id: 1,
