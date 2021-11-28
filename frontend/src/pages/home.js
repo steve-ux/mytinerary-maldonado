@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../components/header';
-import Main from '../components/main';
-import Footer from '../components/footer';
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Footer from '../components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Home extends React.Component{
     render(){
         return(
-            <div>
+            <div>                
                 <Header/>
                 <Main/>
                 <Footer/>                

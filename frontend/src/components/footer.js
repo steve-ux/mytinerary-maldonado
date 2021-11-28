@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Instagram from '../assets/logo-instagram.png';
 import YouTube from '../assets/logo-youtube.png';
 import Facebook from '../assets/logo-facebook.png';
+import { Link } from "react-router-dom";
 
 
 function Footer() {
@@ -18,7 +19,7 @@ function Footer() {
       <div className="menu">
         <dl>
           <dt>Home</dt>
-          <a href= "https://example.com/" target="_blank"><dt>Cities</dt></a>
+          <Link as={Link} to={"/Cities"}><dt>Cities</dt></Link>
         </dl>
       </div>
     </footer>

@@ -1,30 +1,21 @@
 import React from "react";
 import LogoUsuario from "../assets/logo_usuario.png";
-function Header() {
-  return (      
-  <nav class="navbar navbar-dark bg-dark">
-      <div class="container">
-          <div className="nav1">
-        <a class="navbar-brand" href="#">
-          Home
-        </a>
-        <a class="navbar-brand" href="https://example.com/" target="__blank">
-          Cities
-        </a>
-        </div>
-        <div className="nav2">
-        <a class="navbar-brand" href="#">
-        👤 SignUp
-        </a>
-        <a class="navbar-brand" href="#">
-        ➡️ LogIn
-        </a>
-        <img className="user" src={LogoUsuario}/>
-        </div>
-      </div>
-    </nav>
-    
-  );
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
+
+
+function Header(){
+  return (
+    <nav class="container">
+  <div className="nav" class="d-flex">
+<Nav.Link as={Link} to={"/"}>Home</Nav.Link>
+<Nav.Link as={Link} to={"/Cities"}>Cities</Nav.Link>
+  <Nav.Link as={Link} to={"/"}>Sign Up</Nav.Link>
+<Nav.Link as={Link} to={"/"}>Login</Nav.Link>
+<img className="user" src={LogoUsuario}/>
+  </div>
+</nav>
+  )
 }
 
 export default Header;
