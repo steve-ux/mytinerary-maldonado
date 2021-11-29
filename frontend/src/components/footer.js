@@ -18,7 +18,7 @@ function Footer() {
       </div>
       <div className="menu">
         <dl>
-          <dt>Home</dt>
+        <Link as={Link} to={"/"}><dt>Home</dt></Link>
           <Link as={Link} to={"/Cities"}><dt>Cities</dt></Link>
         </dl>
       </div>

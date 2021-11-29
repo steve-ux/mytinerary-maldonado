@@ -12,29 +12,29 @@ export const City = () => {
     let { id } = useParams();
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/City/'+ id)
-        .then(res => setCity([res.data.response]))
+        axios.get('http://localhost:4000/api/city/'+id)
+        .then(res => setCity([res.data.respuesta]))
     },[])
     return (
         <div>
             <Header/>
-            <h1>The best destination!</h1>
+            <h1 className="title-city">The best destination!</h1>
             {
                 cities.map((elem, i) => {
                     return (
-                        <div className="card-city">
-                                <div className="img-div" key={i} ciudad={elem.city}>
-                                <img src={elem.image}/>
+                        <div className="city">
+                                <div class="container" key={i} ciudad={elem.city}>
+                                <img className="image-city" src={elem.image}/>
                                 </div>
                                 <div className="text-container" >
-                                    <h3>{elem.city}</h3>
+                                    <h3 className="title-city">{elem.city}</h3>
                                 </div>
                             </div>
                     )
                 })
             }
-            <Link className="cities-btn" to="/Cities"><button>Back to cities</button></Link>
-            <h4>Under Construction</h4>
+            <h4 className="under">Under Construction, sorry.</h4>
+            <Link className="cities-btn d-flex justify-content-center" to="/Cities"><button className="back">Back to cities</button></Link>
             <Footer/>
         </div>
     )

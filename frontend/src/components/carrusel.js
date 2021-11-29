@@ -19,7 +19,7 @@ export default class App extends Component {
         id:2,
         city:"Miami",
         country: "USA",
-        image:"https://th.bing.com/th/id/OIP.tt5hrDW-NkqjZE4DC72GewHaE6?pid=ImgDet&rs=1",
+        image:"https://images.pexels.com/photos/4445179/pexels-photo-4445179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         zone:"North America",
       },
     {
@@ -136,7 +136,7 @@ export default class App extends Component {
               return element.zone === "North America"
               })
               .map((element, index,) =>  (
-                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '20rem' }}>
+                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '18rem' }}>
                 <Card.Image src={element.image} top/>
                 <Card.Body>
                   <Card.Text>
@@ -155,7 +155,7 @@ export default class App extends Component {
               return element.zone === "Europe"
               })
               .map((element, index,) =>  (
-                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '20rem' }}>
+                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '18rem' }}>
                 <Card.Image src={element.image} top/>
                 <Card.Body>
                   <Card.Text>
@@ -172,7 +172,7 @@ export default class App extends Component {
               return element.zone === "South America"
               })
               .map((element, index,) =>  (
-                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '20rem' }}>
+                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '18rem' }}>
                 <Card.Image src={element.image} top/>
                 <Card.Body>
                   <Card.Text>
@@ -185,12 +185,14 @@ export default class App extends Component {
 
               
               </Carousel.Inner>
-              <Carousel.Prev href="#carouselExampleControls">
+              <div className="flechas">
+              <Carousel.Prev className="flecha" href="#carouselExampleControls">
           <Carousel.Prev.Icon />
         </Carousel.Prev>
-        <Carousel.Next href="#carouselExampleControls">
+        <Carousel.Next className="flecha" href="#carouselExampleControls">
           <Carousel.Next.Icon />
         </Carousel.Next>
+        </div>
 
       </Carousel>
       </div>

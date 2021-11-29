@@ -13,6 +13,24 @@ html * {
   flex-direction: column;
   background-position-y: -10rem;  
 }
+.tarjetas{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50%;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 8rem;
+}
+.city-container-card{
+  margin-right: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 .user {
   width: 40px;
@@ -20,11 +38,8 @@ html * {
 }
 
 .nav {
-  margin-right: 1rem !important;
   font-family: 'Bebas Neue', cursive !important;
   font-size: 1.5rem !important;
-  display: flex !important;
-  justify-content: space-between !important;
 }
 
 .slogan {
@@ -54,11 +69,67 @@ html * {
   font-family: 'Bebas Neue', cursive;
   text-align: center;
 }
+.title-city{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  padding: 1rem;
+}
+.back{
+  color: black;
+  background-color: rgba(37, 152, 219, 0.842);
+  border-radius: .5rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Bebas Neue', cursive;
+}
+.alert{
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: xx-large;
+}
+.name-city{
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: xx-large;
+}
+.name-country{
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: x-large;
+  margin-bottom: 5rem;
+}
+.card{
+  display: flex;
+  justify-content: flex-start;
+  width: 75%;
+  padding: 1rem;
+  margin-left: 12rem;
+}
+.name-container{
+  margin-bottom: 2rem;
+}
+.under{
+  text-align: center;
+  font-family: 'Bebas Neue';
+}
 .carrusel {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #318fee;
+}
+.image-city{
+  width: 100%;
+  display: flex;
+
+}
+.flecha{
+  background-color: rgba(0, 0, 255, 0.151) !important;
+  padding: .5rem !important;
+}
+.flechas{
+  padding: .5rem !important;
 }
 
 .footer {
