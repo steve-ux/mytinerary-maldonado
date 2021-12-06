@@ -49,40 +49,55 @@ const City = (props) => {
         props.getItinerarios.map((p) => {
           return (
             <div className="card-container">
-            <div className="itinerarios">
-              <Card className="text-center">
-                <Card.Body class="bg-danger">
-                <Card.Header>
-                  <img className="foto-itinerarios" src={p.photo} width="30%" />
-                </Card.Header>
-                  <Card.Title>{p.name}</Card.Title>
-                  <Card.Text>
-                    <p className="datos-itinerarios">Price: {"💵".repeat(p.price)}</p>
-                    <p className="datos-itinerarios">Duration:{"🕒".repeat(p.duration)}</p>
-                    <p className="datos-itinerarios">Likes: {p.likes}</p>
-                    <p className="datos-itinerarios">{p.hashtag}</p>
-                    <Accordion defaultActiveKey="0" flush>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>View More</Accordion.Header>
-                  <Accordion.Body>
-                    <h2 className="title-page-city">Activities</h2>
-                    <div>
-                      <p>
-                        Comments:
-                        <form>
-                          <input className="comments" type="text" id="fname" name="fname" />
-                          {p.comments}
-                        </form>
+              <div className="itinerarios">
+                <Card className="text-center">
+                  <Card.Body class="bg-danger">
+                    <Card.Header>
+                      <img
+                        className="foto-itinerarios"
+                        src={p.photo}
+                        width="30%"
+                      />
+                    </Card.Header>
+                    <Card.Title>{p.name}</Card.Title>
+                    <Card.Text>
+                      <p className="datos-itinerarios">
+                        Price: {"💵".repeat(p.price)}
                       </p>
-                    </div>
-                    <h4 className="under">Under Construction ⚠️, sorry.</h4>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
+                      <p className="datos-itinerarios">
+                        Duration:{"🕒".repeat(p.duration)}
+                      </p>
+                      <p className="datos-itinerarios">Likes: {p.likes}</p>
+                      <p className="datos-itinerarios">{p.hashtag}</p>
+                      <Accordion defaultActiveKey="0" flush>
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>View More</Accordion.Header>
+                          <Accordion.Body>
+                            <h2 className="title-page-city">Activities</h2>
+                            <div>
+                              <p>
+                                Comments:
+                                <form>
+                                  <input
+                                    className="comments"
+                                    type="text"
+                                    id="fname"
+                                    name="fname"
+                                  />
+                                  {p.comments}
+                                </form>
+                              </p>
+                            </div>
+                            <h4 className="under">
+                              Under Construction ⚠️, sorry.
+                            </h4>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
             </div>
           );
         })

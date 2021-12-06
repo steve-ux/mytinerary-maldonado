@@ -16,18 +16,18 @@ function Main() {
       <img src={Logotipo} />
       <h4 className="slogan">
         "Find your perfect trip, designed by insiders who know and love their
-        cities!"{" "}
+        cities!"
       </h4>
       <div className="buttons">
-      <Link as={Link} to={"/Cities"}>
-      <button className="btn-hover color-9">To fly!</button>
-      </Link>
+        <Link as={Link} to={"/Cities"}>
+          <button className="btn-hover color-9">To fly!</button>
+        </Link>
       </div>
       <br />
       <div className="graficos">
-      <img className="imgTravel" src={Tickets} />
-      <img className="imgTravel" src={Travel} />
-      <img className="imgTravel" src={Enjoy} />
+        <img className="imgTravel" src={Tickets} />
+        <img className="imgTravel" src={Travel} />
+        <img className="imgTravel" src={Enjoy} />
       </div>
       <CarouselExample />
     </div>

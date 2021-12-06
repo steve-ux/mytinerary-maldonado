@@ -5,7 +5,7 @@ const itinerariosControllers = {
     let itinerarios;
     let error = null;
     try {
-      itinerarios = await Itinerario.find().populate('cityID');
+      itinerarios = await Itinerario.find().populate("cityID");
     } catch (error) {
       error = error;
       console.error(error);
@@ -19,8 +19,18 @@ const itinerariosControllers = {
   },
 
   addItinerario: (req, res) => {
-    const { name, photo, price, duration, likes, comments, hashtag, cityID } = req.body;
-    new Itinerario({ name, photo, price, duration, likes, comments, hashtag, cityID })
+    const { name, photo, price, duration, likes, comments, hashtag, cityID } =
+      req.body;
+    new Itinerario({
+      name,
+      photo,
+      price,
+      duration,
+      likes,
+      comments,
+      hashtag,
+      cityID,
+    })
       .save()
       .then((response) => res.json({ response }));
   },
@@ -36,13 +46,13 @@ const itinerariosControllers = {
     res.json({ respuesta: itinerarios, success: true });
   },
   getItinerarioCity: async (req, res) => {
-    const cityId = (req.params.id)
+    const cityId = req.params.id;
     try {
-      const selectedCityItineraries = await Itinerario.find({ cityID: cityId })
+      const selectedCityItineraries = await Itinerario.find({ cityID: cityId });
       if (selectedCityItineraries.length != 0) {
         res.json({ success: true, respuesta: selectedCityItineraries });
       } else {
-        res.json({ success: false, respuesta: [] })
+        res.json({ success: false, respuesta: [] });
       }
     } catch (error) {
       console.log(error);
