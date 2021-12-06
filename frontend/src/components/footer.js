@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Instagram from '../assets/logo-instagram.png';
-import YouTube from '../assets/logo-youtube.png';
-import Facebook from '../assets/logo-facebook.png';
+import Twitter from '../assets/logo-twitter.png';
 import { Link } from "react-router-dom";
 
 
@@ -13,8 +12,7 @@ function Footer() {
       </div>
       <div>
           <a href="https://www.instagram.com/mytinerary/" target="_blank"><img className="socialNetworksIG" src={Instagram}/></a>
-          <a href="https://www.youtube.com/" target="_blank"><img className="socialNetworks" src={YouTube}/></a>
-          <a href="https://www.facebook.com/mytinerary" target="_blank"><img className="socialNetworks" src={Facebook}/></a>
+          <a href="https://www.twitter.com/mytinerary" target="_blank"><img className="socialNetworks" src={Twitter}/></a>
       </div>
       <div className="menu">
         <dl>

@@ -3,7 +3,7 @@ import Cities from "./pages/Cities";
 import Home from "./pages/Home.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { City } from "./components/City";
+import City from "./components/City";
 
 function App() {
   return (

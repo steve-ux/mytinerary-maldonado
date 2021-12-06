@@ -13,6 +13,43 @@ html * {
   flex-direction: column;
   background-position-y: -10rem;  
 }
+.buttons {
+  text-align: center;
+}
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+.btn-hover.color-9 {
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
 .tarjetas{
   display: flex;
   flex-direction: column;
@@ -23,6 +60,11 @@ html * {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right: 8rem;
+}
+.graficos{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .city-container-card{
   margin-right: 12rem;
@@ -40,11 +82,28 @@ html * {
 .nav {
   font-family: 'Bebas Neue', cursive !important;
   font-size: 1.5rem !important;
+  color: white !important;
+}
+.nav:hover {
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 1.5rem !important;
+  color: black !important;
+}
+.nav2 {
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 1.5rem !important;
+}
+.nav2:hover {
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 1.5rem !important;
+  color: rgb(39, 128, 201) !important;
+  background-color: black !important;
 }
 
 .slogan {
   color: white;
   text-align: center;
+  font-family: 'Bebas Neue', cursive;
 }
 .video {
   position: absolute;
@@ -57,36 +116,89 @@ html * {
   z-Index: -1;
 }
 .imgTravel {
-  padding: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.logotipo-city{
+  display: flex;
+  justify-content: center;
+
+  
 }
 .cover{
+  position: absolute;
   width: 100%;
-  height: 500px;
+  left: 50%;
+  top: 40%;
+  height: 90%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-Index: -1;
 }
 .titleCarousel {
   font-family: 'Bebas Neue', cursive;
   text-align: center;
 }
-.title-city{
+.title-page-city{
   font-family: 'Bebas Neue', cursive;
   text-align: center;
   padding: 1rem;
+
+}
+.title-city{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  padding: .5rem;
+  font-size: 4rem;
+}
+.title-cities{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  padding: .5rem;
+}
+.slogan-city{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+}
+.itinerarios{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+link {
+  text-decoration: none;
+}
+link:hover{
+  text-decoration: none !important;
+  text-decoration: underline none !important;
 }
 .back{
   color: black;
-  background-color: rgba(37, 152, 219, 0.842);
   border-radius: .5rem;
   padding: 1rem;
   margin-left: 1rem;
   margin-bottom: 1rem;
   font-family: 'Bebas Neue', cursive;
+  background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+.botones:hover{
+  text-decoration: none !important;
+}
+.view-more{
+  display: flex;
+  align-items: center;
 }
 .alert{
   text-align: center;
   font-family: 'Bebas Neue', cursive;
   font-size: xx-large;
+  display: flex !important;
+  justify-content: center !important;
+  margin-left: 6rem !important;
+  margin-top: 1rem !important;
 }
 .name-city{
   text-align: center;
@@ -119,21 +231,27 @@ html * {
   align-items: center;
   color: #318fee;
 }
-.image-city{
+.image-cities{
   width: 100%;
   display: flex;
-
 }
-.flecha{
-  background-color: rgba(0, 0, 255, 0.151) !important;
-  padding: .5rem !important;
+.image-city{
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 40%;
+  height: 90%;
+  opacity: 70%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-Index: -1;
 }
 .flechas{
-  padding: .5rem !important;
+  padding: 1rem !important;
 }
 
 .footer {
-  background-color: #212529;
+  background-color: #000000;
   color: white;
   margin-top: 1.5rem;
   font-family: 'Bebas Neue', cursive;
@@ -155,4 +273,91 @@ html * {
 }
 a{
   text-decoration: none;
+}
+.datos-itinerarios{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  color: white;
+}
+.foto-itinerarios{
+  border-radius: 3rem;
+}
+form{
+  display: flex;
+  justify-content: center;
+}
+.botones{
+  display: flex;
+  justify-content: center;
+}
+.divPadre{
+  height: 100vh;
+  position: relative;
+}
+.divHijo{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.spinnerReactstrap{
+  width: 100px !important;
+  height: 100px !important;
+  border: 10px solid currentColor !important;
+  border-right-color: transparent !important;
+}
+
+.btn-grad {background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+   font-family: 'Bebas Neue', cursive;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+
+
+/*Media Queries*/
+
+@media screen and (min-width: 320px) and (max-width: 812px) {
+
+  .graficos{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .alert{
+    display: flex !important;
+    justify-content: start !important;
+    margin-left: 2rem !important;
+  }
+  .comments{
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 10rem;
+  }
+  /* .itinerarios{
+    padding: 1rem;
+    margin: 0;
+    display: flex !important;
+    justify-content: center !important;
+    margin-right: 10rem;
+  } */
 }

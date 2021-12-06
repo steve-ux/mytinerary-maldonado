@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Bootstrap, { Carousel, BImg } from 'bootstrap-4-react';
+import Bootstrap, { Carousel, BImg} from 'bootstrap-4-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from 'bootstrap-4-react';
+//import Carousel from 'react-bootstrap/Carousel'
 
 export default class App extends Component {
+  
   constructor (props){
     super(props);
     this.state = {
@@ -19,7 +21,7 @@ export default class App extends Component {
         id:2,
         city:"Miami",
         country: "USA",
-        image:"https://images.pexels.com/photos/4445179/pexels-photo-4445179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        image:"https://rccl-h.assetsadobe.com/is/image/content/dam/royal/data/ports/miami-florida/miami-florida-south-beach-aerial.jpg?$1024x700$",
         zone:"North America",
       },
     {
@@ -117,15 +119,20 @@ export default class App extends Component {
 }
 }
 
+
   componentDidMount() {
     window.setTimeout(() => Bootstrap.carousel('#carouselExampleControls'), 20);
   }
 
   render() {
+    const img_src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2275%22%20height%3D%2275%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2075%2075%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165aaafcf71%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165aaafcf71%22%3E%3Crect%20width%3D%2275%22%20height%3D%2275%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2219.34375%22%20y%3D%2242.15%22%3E75x75%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E';
+    const boxStyle = {
+      margin: '.25rem'
+    }
     return (
       <div className="carrusel">
       <h2 className="titleCarousel">"Popular MyTineraries"</h2>
-      <Carousel w="100" id="carouselExampleControls">
+      <Carousel w="100" id="carouselExampleControls" display="flex" justifyContent="center">
        
              
              <Carousel.Inner>
@@ -136,7 +143,7 @@ export default class App extends Component {
               return element.zone === "North America"
               })
               .map((element, index,) =>  (
-                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '18rem' }}>
+                <Card display="inline-block" align="top" ml="5" mr="3" p="3" style={{ width: '18rem' }}>
                 <Card.Image src={element.image} top/>
                 <Card.Body>
                   <Card.Text>
@@ -155,7 +162,7 @@ export default class App extends Component {
               return element.zone === "Europe"
               })
               .map((element, index,) =>  (
-                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '18rem' }}>
+                <Card display="inline-block" align="top" ml="5" mr="3" p="3" style={{ width: '18rem' }}>
                 <Card.Image src={element.image} top/>
                 <Card.Body>
                   <Card.Text>
@@ -172,7 +179,7 @@ export default class App extends Component {
               return element.zone === "South America"
               })
               .map((element, index,) =>  (
-                <Card display="inline-block" align="top" ml="5" mr="1" p="3" style={{ width: '18rem' }}>
+                <Card display="inline-block" align="top" ml="5" mr="3" p="3" style={{ width: '18rem' }}>
                 <Card.Image src={element.image} top/>
                 <Card.Body>
                   <Card.Text>
@@ -186,11 +193,11 @@ export default class App extends Component {
               
               </Carousel.Inner>
               <div className="flechas">
-              <Carousel.Prev className="flecha" href="#carouselExampleControls">
-          <Carousel.Prev.Icon />
-        </Carousel.Prev>
-        <Carousel.Next className="flecha" href="#carouselExampleControls">
-          <Carousel.Next.Icon />
+              <Carousel.Prev display="flex" justifyContent="start"  href="#carouselExampleControls">
+          <Carousel.Prev.Icon bg="primary" src={img_src} style={boxStyle} rounded="circle" />
+        </Carousel.Prev>    
+        <Carousel.Next display="flex" justifyContent="end" href="#carouselExampleControls">
+          <Carousel.Next.Icon bg="primary" src={img_src} style={boxStyle} rounded="circle" />
         </Carousel.Next>
         </div>
 
