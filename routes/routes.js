@@ -1,6 +1,9 @@
+require("../config/database");
 const Router = require("express").Router();
 const citiesControllers = require("../controllers/citiesControllers");
 const itinerariosControllers = require("../controllers/itinerariosControllers");
+const validator = require("../config/validator");
+const userControllers = require("../controllers/userControllers");
 
 const { getCities, addCity, getCity, deleteCity, modifyCity } =
   citiesControllers;
@@ -12,6 +15,8 @@ const {
   modifyItinerario,
   getItinerarioCity,
 } = itinerariosControllers;
+
+const { newUser, logIn } = userControllers;
 
 Router.route("/cities").get(getCities).post(addCity);
 
@@ -25,5 +30,9 @@ Router.route("/city/itinerary/:id")
   .put(modifyItinerario);
 
 Router.route("/itinerary/:id").get(getItinerario);
+
+Router.route("/auth/signUp").post(validator, newUser);
+
+Router.route("/auth/logIn").post(logIn);
 
 module.exports = Router;

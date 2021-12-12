@@ -290,6 +290,31 @@ form{
   display: flex;
   justify-content: center;
 }
+.viewMore{
+  display: flex !important;
+  align-content: center !important;
+  background-color: black !important;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  }
+.inputs{
+  display: flex;
+  padding: .5rem;
+  
+}
+.policy{
+  text-align: center;
+  font-size: x-small;
+}
+.TermsAndPolicy{
+  text-align: start;
+  padding: 2rem;
+  margin-top: 3rem;
+}
 .divPadre{
   height: 100vh;
   position: relative;

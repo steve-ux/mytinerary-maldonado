@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="span">
-        <span>MyTinerary 2021 | All right reserved.</span>
+        <span><Link as={Link} to={"/TermsAndPolicy"}>MyTinerary</Link> 2021 | All right reserved.</span>
       </div>
       <div>
         <a href="https://www.instagram.com/mytinerary/" target="_blank">

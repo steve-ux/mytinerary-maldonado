@@ -53,6 +53,7 @@ const City = (props) => {
                 <Card className="text-center">
                   <Card.Body class="bg-danger">
                     <Card.Header>
+                    <h2 className="title-page-city">{p.title}</h2>
                       <img
                         className="foto-itinerarios"
                         src={p.photo}
@@ -71,7 +72,7 @@ const City = (props) => {
                       <p className="datos-itinerarios">{p.hashtag}</p>
                       <Accordion defaultActiveKey="0" flush>
                         <Accordion.Item eventKey="0">
-                          <Accordion.Header>View More</Accordion.Header>
+                          <Accordion.Header class="d-flex align-items-center"><p className="viewMore">View More</p></Accordion.Header>
                           <Accordion.Body>
                             <h2 className="title-page-city">Activities</h2>
                             <div>

@@ -15,8 +15,8 @@ function Header(){
         <Nav.Link className="nav" as={Link} to={"/"}>Home</Nav.Link>
         <Nav.Link className="nav" as={Link} to={"/Cities"}>Cities</Nav.Link>      
         <NavDropdown title= <img className="user" src={LogoUsuario}/> id="basic-nav-dropdown">
-          <NavDropdown.Item className="nav2" as={Link} to={"/"}>Sign Up</NavDropdown.Item>
-          <NavDropdown.Item className="nav2" as={Link} to={"/"}>Login</NavDropdown.Item>
+          <NavDropdown.Item className="nav2" as={Link} to={"/SignUp"}>Sign Up</NavDropdown.Item>
+          <NavDropdown.Item className="nav2" as={Link} to={"/LogIn"}>Login</NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const itinerarioSchema = new mongoose.Schema({
+  title: {String },
   name: { type: String, required: true },
   photo: { type: String, required: true },
   price: { type: Number, required: true },
