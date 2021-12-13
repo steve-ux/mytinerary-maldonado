@@ -72,7 +72,7 @@ const City = (props) => {
                       <p className="datos-itinerarios">{p.hashtag}</p>
                       <Accordion defaultActiveKey="0" flush>
                         <Accordion.Item eventKey="0">
-                          <Accordion.Header class="d-flex align-items-center"><p className="viewMore">View More</p></Accordion.Header>
+                          <Accordion.Header class="d-flex align-items-center"><p>View More</p></Accordion.Header>
                           <Accordion.Body>
                             <h2 className="title-page-city">Activities</h2>
                             <div>

@@ -11,12 +11,17 @@ const LogIn = (props) => {
   const inputEmail = useRef();
   const inputPassword = useRef();
 
-  const handleSubmit = async (email, password) => {
-    props.logIn(email, password);
+  const handleSubmit = async (userLogin) => {
+    const errores = await props.logIn(userLogin);
+    console.log(errores);
   };
   const handleSubmitInputs = (e) => {
     e.preventDefault();
-    handleSubmit(inputEmail.current.value, inputPassword.current.value);
+    const logIn = {
+      email: inputEmail.current.value,
+      password: inputPassword.current.value,
+    };
+    handleSubmit(logIn);
     inputEmail.current.value = "";
     inputPassword.current.value = "";
   };
@@ -32,9 +37,12 @@ const LogIn = (props) => {
 
   return (
     <div className="container-formulario">
-      <div className="cover">
-        <img src={Cover} />
-      </div>
+      <img
+        className="cover"
+        style={{ animation: "myAnim 2s ease 0s 1 normal forwards" }}
+        src={Cover}
+      />
+
       <div className="logotipo-city">
         <img src={Logotipo} />
       </div>
@@ -67,8 +75,8 @@ const LogIn = (props) => {
               name="name"
             />
           </label>
-          <button className="btn-grad">
-            <input type="submit" value="LogIn" />
+          <button className="btn-grad" type="submit">
+            LogIn
           </button>
           <GoogleLogin
             clientId="159876080199-t1eptjgja96a83udmo0ua4ccjcvsjbtq.apps.googleusercontent.com"
@@ -77,7 +85,6 @@ const LogIn = (props) => {
             onFailure={responseGoogle}
             cookiePolicy={"single_host_origin"}
           />
-          ,
         </form>
       </main>
     </div>

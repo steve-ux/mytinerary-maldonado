@@ -136,6 +136,21 @@ html * {
   transform: translate(-50%, -50%);
   z-Index: -1;
 }
+@keyframes myAnim {
+  0% {
+    transform: scale(2.25) translate(-50%, -50%);
+
+  }
+
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: top;
+    
+  }
+}
+.privacy{
+  margin-top: 4rem;
+}
 .titleCarousel {
   font-family: 'Bebas Neue', cursive;
   text-align: center;

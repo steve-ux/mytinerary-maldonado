@@ -27,7 +27,7 @@ function Cities(props) {
     <>
       <div className="city-container">
         <Header />
-        <img className="cover" src={Cover} />
+        <img className="cover" style={{animation: "myAnim 2s ease 0s 1 normal forwards"}} src={Cover} />
         <div className="logotipo-city">
           <img src={Logotipo} />
         </div>

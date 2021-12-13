@@ -226,24 +226,20 @@ const Registro = (props) => {
   const inputImg = useRef();
   const inputCountry = useRef();
 
-  const handleSubmit = async (
-    user
-  ) => {
-    const errores = await props.registrarUsuario(
-      user
-    );
+  const handleSubmit = async (user) => {
+    const errores = await props.registerUser(user);
     console.log(errores);
   };
   const handleSubmitInputs = (e) => {
     e.preventDefault();
     const user = {
-      name:inputName.current.value,
-      lastName:inputLastName.current.value,
+      name: inputName.current.value,
+      lastName: inputLastName.current.value,
       email: inputEmail.current.value,
       password: inputPassword.current.value,
-      img:  inputImg.current.value,
-      country:inputCountry.current.value, 
-    }
+      img: inputImg.current.value,
+      country: inputCountry.current.value,
+    };
     handleSubmit(user);
     inputName.current.value = "";
     inputLastName.current.value = "";
@@ -264,15 +260,18 @@ const Registro = (props) => {
       google: true,
     };
     props
-      .registrarUsuario(googleUser)
+      .registerUser(googleUser)
       .then((response) => response.data.success)
       .catch((error) => console.log(error));
   };
   return (
     <div className="container">
-      <div className="cover">
-        <img src={Cover} />
-      </div>
+      <img
+        className="cover"
+        style={{ animation: "myAnim 2s ease 0s 1 normal forwards" }}
+        src={Cover}
+      />
+
       <div className="logotipo-city">
         <img src={Logotipo} />
       </div>
@@ -376,7 +375,7 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = {
-  registrarUsuario: authActions.register,
+  registerUser: authActions.register,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Registro);

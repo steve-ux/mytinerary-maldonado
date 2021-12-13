@@ -15,19 +15,15 @@ const authActions = {
       } catch (error) {}
     };
   },
-  logIn: (email, password, google) => {
+  logIn: (userLogin) => {
     return async (dispatch, getState) => {
       try {
-        const user = await axios.post("http://localhost:4000/api/auth/logIn", {
-          email,
-          password,
-          google,
-        });
+        const user = await axios.post("http://localhost:4000/api/auth/logIn", {...userLogin});
         if (user.data.success && !user.data.error) {
           localStorage.setItem("token", user.data.response.token);
           dispatch({
             type: "user",
-            payload: { user: user.data.response.email },
+            payload: { user: user.data.response },
           });
         } else {
           alert(user.data.error);
@@ -37,6 +33,12 @@ const authActions = {
       }
     };
   },
+  logOut: () => {
+    return (dispatch, getState)=>{
+      localStorage.clear()
+      dispatch({type: 'logOut', payload:{}})
+    }
+  }
 };
 
 module.exports = authActions;

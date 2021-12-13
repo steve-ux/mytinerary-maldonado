@@ -6,13 +6,22 @@ import { Link } from "react-router-dom";
 function TermsAndPolicy() {
   return (
     <div className="TermsAndPolicy">
-        <div className="cover">
-        <img src={Cover} />
-      </div>
+      <img
+        className="cover"
+        style={{ animation: "myAnim 2s ease 0s 1 normal forwards" }}
+        src={Cover}
+      />
+
       <div className="logotipo-city">
         <img src={Logotipo} />
       </div>
-      <h1>Privacy Policy <Link as={Link} to={"/"}>MyTinerary</Link></h1>
+      <br/>
+      <h1 className="privacy">
+        Privacy Policy{" "}
+        <Link as={Link} to={"/"}>
+          MyTinerary
+        </Link>
+      </h1>
       <p>
         This Privacy Policy describes Our policies and procedures on the
         collection, use and disclosure of Your information when You use the
