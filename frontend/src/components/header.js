@@ -10,8 +10,8 @@ import { connect } from "react-redux";
 function Header(props){
   
   
-  const logoUser = props.user.user
-  ? <img className="user" src= {props.user.user.img}/>
+  const logoUser = props.token
+  ? <img className="user" src= {(`${props.img}`)}/>
   : <img className="user" src={LogoUsuario}/> 
 
   return (
@@ -23,18 +23,20 @@ function Header(props){
         <Nav.Link className="nav" as={Link} to={"/"}>Home</Nav.Link>
         <Nav.Link className="nav" as={Link} to={"/Cities"}>Cities</Nav.Link>      
         <NavDropdown title={logoUser} id="basic-nav-dropdown">
-          {props.user.user ? <NavDropdown.Item className="nav2" onClick={() => props.logOut()}>LogOut</NavDropdown.Item> : <><NavDropdown.Item className="nav2" as={Link} to={"/SignUp"}>Sign Up</NavDropdown.Item><NavDropdown.Item className="nav2" as={Link} to={"/LogIn"}>Login</NavDropdown.Item></>}
+          {props.token ? <NavDropdown.Item className="nav2" onClick={() => props.logOut()}>LogOut</NavDropdown.Item> : <><NavDropdown.Item className="nav2" as={Link} to={"/SignUp"}>Sign Up</NavDropdown.Item><NavDropdown.Item className="nav2" as={Link} to={"/LogIn"}>Login</NavDropdown.Item></>}
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
   
 </Navbar>
  </nav>
-   )
+   );
  }
  const mapStateToProps = (state) => {
   return {
-    user: state.authReducer.user,
+    token: state.authReducer.token,
+    name: state.authReducer.name,
+    img: state.authReducer.img,
   };
 };
 const mapDispatchToProps = {

@@ -47,7 +47,7 @@ const LogIn = (props) => {
         <img src={Logotipo} />
       </div>
       <h1 className="title-page-city"> Log In please</h1>
-      <h2 className="slogan-city">Join to our World of Adventures!</h2>
+      <h2 className="slogan-city">Enter our World of Adventures!</h2>
       <h4 className="slogan-city">
         Don’t have an account?
         <NavLink exact to="/SignUp">

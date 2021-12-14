@@ -1,23 +1,32 @@
 const initialState = {
-  user: { email: "", img: "", name:"", },
-  userLogged: null,
+  // user: { token: "", email: "", img: "", name:"", },
+  token: null,
+  name: null,
+  img: null,
+  _id: null,
+  errores: null,
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case "user":
-      localStorage.setItem(
-        "userLogged",
-        JSON.stringify({ email: action.payload.email, img: action.payload.img, name: action.payload.name })
-      );
+      localStorage.setItem("token", action.payload.token);
+      localStorage.setItem("name", action.payload.name);
+      localStorage.setItem("img", action.payload.img);
+      localStorage.setItem("_id", action.payload._id);
       return {
-        ...state,
-        user: action.payload,
+        token: action.payload.token,
+        name: action.payload.name,
+        img: action.payload.img,
+        _id: action.payload._id,
       };
     case "logOut":
       return {
         ...state,
-        user: "",
+        token: null,
+        name: null,
+        img: null,
+        _id: null,
       };
     default:
       return state;

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Cover from "../assets/travel-insurance.jpg";
 import Logotipo from "../assets/Mytinerary con nombre sin texto.svg";
 import GoogleLogin from "react-google-login";
+import { toast } from "react-toastify";
 
 const countries = [
   "Afghanistan",
@@ -218,7 +219,6 @@ const countries = [
 ];
 
 const Registro = (props) => {
-  console.log(props);
   const inputName = useRef();
   const inputLastName = useRef();
   const inputEmail = useRef();
@@ -229,6 +229,22 @@ const Registro = (props) => {
   const handleSubmit = async (user) => {
     const errores = await props.registerUser(user);
     console.log(errores);
+    if (errores) {
+      errores.errores.map((e) =>
+        toast.error(e.message, {
+          position: "top-left",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        })
+       
+      );
+     
+    }
   };
   const handleSubmitInputs = (e) => {
     e.preventDefault();
@@ -263,6 +279,7 @@ const Registro = (props) => {
       .registerUser(googleUser)
       .then((response) => response.data.success)
       .catch((error) => console.log(error));
+    
   };
   return (
     <div className="container">
@@ -276,11 +293,12 @@ const Registro = (props) => {
         <img src={Logotipo} />
       </div>
       <h1 className="title-page-city"> Register please</h1>
+      <h2 className="slogan-city">Live the experience of traveling!</h2>
       <h4 className="slogan-city">
-        Already have an account?
+        Already have an account? LogIn
         <NavLink exact to="/LogIn">
           {" "}
-          Log in!
+          here!
         </NavLink>
       </h4>
       <main>

@@ -36,7 +36,7 @@ const validator = (req, res, next) => {
 
     if (validation.error) {
         console.log(validation.error)
-        return res.json({success: false, response:validation.error.details})
+        return res.json({success: false, errores:validation.error.details})
     }
     
     next()
