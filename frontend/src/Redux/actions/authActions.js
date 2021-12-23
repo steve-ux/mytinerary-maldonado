@@ -16,7 +16,18 @@ const authActions = {
             timer: 3000,
           })
         } else {
-          return { errores: user.data.errores };
+          const error =user.data.error
+          if(user.data.error){
+          
+          Swal.fire({
+              position: 'top-end',
+              icon: 'error',
+              title:error,
+              showConfirmButton: true,
+              timer: 1500
+            })
+          }else{
+          return { errores: user.data.errores };}
         }
       } catch (error) {}
     };
@@ -56,7 +67,7 @@ const authActions = {
           Authorization:'Bearer ' + token
         },
         })
-        dispatch({type:'user', payload: {token, name: user.data.name, img: user.data.img}})
+        dispatch({type:'user', payload: {token, name: user.data.name, img: user.data.img, _id: user.data._id }})
 
       } catch(error){
         return dispatch ({type: 'logOut'})

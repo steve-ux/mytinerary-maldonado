@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
 const itinerarioSchema = new mongoose.Schema({
-  title: {String },
+  title: {type: String },
   name: { type: String, required: true },
   photo: { type: String, required: true },
   price: { type: Number, required: true },
   duration: { type: Number, required: true },
-  likes: { type: Number },
-  comments: String,
+  comments:[{comment:{type:String}, userId:{type: mongoose.Types.ObjectId, ref: 'user'}, img:{type: String}, name:{type: String}}],
+  likes: {type: Array},
   hashtag: { type: String },
   cityID: [{ type: mongoose.Types.ObjectId, ref: "ciudad", required: true }],
 });

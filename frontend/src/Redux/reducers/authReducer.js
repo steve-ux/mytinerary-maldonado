@@ -1,8 +1,7 @@
 const initialState = {
-  // user: { token: "", email: "", img: "", name:"", },
   token: null,
-  name: null,
   img: null,
+  name: null,
   _id: null,
   errores: null,
 };
@@ -16,17 +15,17 @@ const authReducer = (state = initialState, action) => {
       localStorage.setItem("_id", action.payload._id);
       return {
         token: action.payload.token,
-        name: action.payload.name,
         img: action.payload.img,
         _id: action.payload._id,
+        name: action.payload.name,
       };
     case "logOut":
       return {
         ...state,
         token: null,
-        name: null,
         img: null,
         _id: null,
+        name: null,
       };
     default:
       return state;

@@ -5,13 +5,12 @@ const jwt = require("jsonwebtoken");
 const userControllers = {
   newUser: async (req, res) => {
     let { name, lastName, email, password, img, country, google } = req.body;
-    console.log(req.body);
     try {
       const existingUser = await User.findOne({ email });
       if (existingUser) {
         res.json({
           success: false,
-          errores: [{ messages: "Email already exist" }],
+          error: "Email already exist",
           response: null,
         });
       } else {
@@ -26,10 +25,11 @@ const userControllers = {
           country,
           google,
         });
+        console.log(newUser)
         const token = jwt.sign({ ...newUser }, process.env.SECRET_KEY);
         console.log(token);
         await newUser.save();
-        res.json({ success: true, response: { token, newUser }, error: null });
+        res.json({ success: true, response: { token, newUser, img }, error: null });
       }
     } catch (error) {
       res.json({ success: false, response: null, error: error });

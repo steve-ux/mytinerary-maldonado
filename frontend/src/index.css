@@ -11,7 +11,7 @@ html * {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-position-y: -10rem;  
+  background-position-y: -10rem;
 }
 .buttons {
   text-align: center;
@@ -73,6 +73,76 @@ html * {
   justify-content: flex-start;
   align-items: center;
 }
+.commentsInputs{
+  width: 50%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-image: linear-gradient( 109.6deg,  rgba(61,245,167,1) 11.2%, rgba(9,111,224,1) 91.1% );
+  color: #000000;
+  margin-top: 1rem;
+}
+
+.activity{
+  margin: auto;
+  width: 100%;
+  font-family: 'Bebas Neue', cursive;
+  display: flex;
+  
+}
+.title-activities{
+display: flex;
+background-color: #80D0C7;
+width: 100%;
+}
+.text-activities{
+  text-align: start;
+  margin-top: 1rem;
+  }
+  .foto-activities{
+    width: auto;
+    height: 150px;
+    display: flex;
+  }
+.sendComment{
+text-decoration: none;
+border: none;
+background-color: white;
+}
+.textArea{
+  display: flex;
+  justify-content: flex-start;
+  padding: .5rem;
+  background-color: #4244463b;
+  width: 50%;
+  border-radius: .5rem;
+margin-top: 1rem;
+margin-bottom: 1rem
+}
+.profilePic{
+  padding: .2rem;
+  border-radius: 1rem;
+}
+.profileName{
+  padding: .2rem;
+}
+.commentUser{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.iconSend{
+  margin-left: .5rem;
+}
+.activity-card{
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0,3);
+  text-align: center;
+  transition: all 0.25s;
+}
+
 
 .user {
   width: 40px;
@@ -160,7 +230,20 @@ html * {
   font-family: 'Bebas Neue', cursive;
   text-align: center;
   padding: 1rem;
-
+}
+.title-page-activities{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  padding: 1rem;
+background-color: black;
+color: white;
+}
+.title-comments{
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  padding: 1rem;
+background-color: black;
+color: white;
 }
 .title-city{
   font-family: 'Bebas Neue', cursive;
@@ -332,13 +415,13 @@ form{
   margin-top: 3rem;
 }
 .divPadre{
-  height: 100vh;
+  height: 80vh;
   position: relative;
 }
 .divHijo{
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -349,7 +432,11 @@ form{
   border: 10px solid currentColor !important;
   border-right-color: transparent !important;
 }
-
+.loading{
+  text-align: center;
+  color: rgba(128, 128, 128, 0.76);
+  margin-top: 1rem;
+}
 .btn-grad {background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%)}
 .btn-grad {
    margin: 10px;
@@ -394,4 +481,52 @@ form{
     padding: 1rem;
     width: 10rem;
   }
+}
+@media screen and (min-width: 320px) and (max-width:1107px) {
+  .activity{
+    margin: auto;
+    width: 100%;
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  
+}
+@media screen and (min-width: 320px) and (max-width:845px) {
+  .commentsInputs{
+    width: 300%;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-image: linear-gradient( 109.6deg,  rgba(61,245,167,1) 11.2%, rgba(9,111,224,1) 91.1% );
+    color: #000000;
+    margin-top: 1rem;
+  }
+    .textArea{
+      display: flex;
+      justify-content: flex-start;
+      padding: .5rem;
+      background-color: #4244463b;
+      width: 300%;
+      border-radius: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem
+    }
+    .profilePic{
+      padding: .2rem;
+    }
+    .profileName{
+      padding: .2rem;
+    }
+    .commentUser{
+      background-color: #80D0C7;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .iconSend{
+      margin-left: .1 rem;
+    }
+  
 }

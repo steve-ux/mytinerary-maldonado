@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -8,9 +8,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Alert from "react-bootstrap/Alert";
-import Accordion from "react-bootstrap/Accordion";
 import Logotipo from "../assets/Mytinerary con nombre sin texto.svg";
-import Card from "react-bootstrap/Card";
+import Loading from "../components/Loading";
+import Itinerary from "./Itinerary";
 
 const City = (props) => {
   let { id } = useParams();
@@ -19,7 +19,21 @@ const City = (props) => {
     props.getOneCity(id);
     props.getItinerary(id);
   }, []);
-  console.log(props);
+  if (props.oneCity == null) {
+    return (
+      <div>
+        <Header />
+        <h1 className="title-page-city"> The best destination for you!</h1>
+      <div className="logotipo-city">
+        <img src={Logotipo} />
+      </div>
+      <h2 className="title-page-city">Our itineraries for you</h2>
+        <h3 className="loading">Loading...please wait</h3>
+        <Loading />
+        <Footer />
+      </div>
+    );
+  } else {
 
   return (
     <div className="city">
@@ -46,61 +60,9 @@ const City = (props) => {
           </Alert>
         </div>
       ) : (
-        props.getItinerarios.map((p) => {
+        props.getItinerarios.map((itineraries) => {
           return (
-            <div className="card-container">
-              <div className="itinerarios">
-                <Card className="text-center">
-                  <Card.Body class="bg-danger">
-                    <Card.Header>
-                    <h2 className="title-page-city">{p.title}</h2>
-                      <img
-                        className="foto-itinerarios"
-                        src={p.photo}
-                        width="30%"
-                      />
-                    </Card.Header>
-                    <Card.Title>{p.name}</Card.Title>
-                    <Card.Text>
-                      <p className="datos-itinerarios">
-                        Price: {"💵".repeat(p.price)}
-                      </p>
-                      <p className="datos-itinerarios">
-                        Duration:{"🕒".repeat(p.duration)}
-                      </p>
-                      <p className="datos-itinerarios">Likes: {p.likes}</p>
-                      <p className="datos-itinerarios">{p.hashtag}</p>
-                      <Accordion defaultActiveKey="0" flush>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header class="d-flex align-items-center"><p>View More</p></Accordion.Header>
-                          <Accordion.Body>
-                            <h2 className="title-page-city">Activities</h2>
-                            <div>
-                              <p>
-                                Comments:
-                                <form>
-                                  <input
-                                    className="comments"
-                                    type="text"
-                                    id="fname"
-                                    name="fname"
-                                  />
-                                  {p.comments}
-                                </form>
-                              </p>
-                            </div>
-                            <h4 className="under">
-                              Under Construction ⚠️, sorry.
-                            </h4>
-                          </Accordion.Body>
-                        </Accordion.Item>
-                      </Accordion>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </div>
-            </div>
-          );
+            <Itinerary Itineraries={itineraries} key={itineraries.id}/>)
         })
       )}
       <div className="botones">
@@ -115,6 +77,7 @@ const City = (props) => {
     </div>
   );
 };
+}
 
 const mapStateToProps = (state) => {
   return {

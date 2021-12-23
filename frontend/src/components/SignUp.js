@@ -301,7 +301,7 @@ const Registro = (props) => {
           here!
         </NavLink>
       </h4>
-      <main>
+      <main className="signUp">
         <form className="form" onSubmit={handleSubmitInputs}>
           <label className="inputs">
             <input

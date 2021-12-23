@@ -1,7 +1,7 @@
 const initialState = {
   copiaCities: [],
-  cities: [],
-  city: [],
+  cities: null,
+  city: null,
   success: true,
 };
 

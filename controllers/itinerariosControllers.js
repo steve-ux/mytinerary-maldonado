@@ -88,6 +88,91 @@ const itinerariosControllers = {
     }
     res.json({ success: actualizado ? true : false });
   },
+  addOrRemoveLike: (req, res) => {
+    Itinerario.findOne({ _id: req.params.id })
+      .then((itinerary) => {
+        if (itinerary.likes.includes(req.user._id)) {
+          Itinerario.findOneAndUpdate(
+            { _id: req.params.id },
+            { $pull: { likes: req.user.id } },
+            { new: true }
+          )
+            .then((newItinerary) =>
+              res.json({ success: true, response: newItinerary.likes })
+            )
+            .catch((error) => console.log(error));
+        } else {
+          Itinerario.findOneAndUpdate(
+            { _id: req.params.id },
+            { $push: { likes: req.user.id } },
+            { new: true }
+          )
+            .then((newItinerary) =>
+              res.json({ success: true, response: newItinerary.likes })
+            )
+            .catch((error) => console.log(error));
+        }
+      })
+      .catch((error) => res.json({ success: false, response: error }));
+  },
+  controlComment: async (req, res) => {
+    switch (req.body.type) {
+      case "addComment":
+        try {
+          const newComment = await Itinerario.findOneAndUpdate(
+            { _id: req.params.id },
+            {
+              $push: {
+                comments: { comment: req.body.comment, userId: req.user._id, img: req.user.img, name: req.user.name },
+              },
+            },
+            { new: true }
+          ).populate("comments.userId");
+          if (newComment) {
+            res.json({ success: true, response: newComment.comments });
+          } else {
+            throw new Error();
+          }
+        } catch (error) {
+          res.json({ success: false, response: error.message });
+        }
+        break;
+
+      case "editComment":
+        try {
+          let editedComment = await Itinerario.findOneAndUpdate(
+            { "comments._id": req.params.id },
+            { $set: { "comments.$.comment": req.body.comment } },
+            { new: true }
+          );
+          if (editedComment) {
+            res.json({ success: true, response: editedComment.comments });
+          } else {
+            throw new Error();
+          }
+        } catch (error) {
+          res.json({ success: false, response: error.message });
+        }
+        break;
+
+      case "deleteComment":
+        try {
+          let deletedComment = await Itinerario.findOneAndUpdate(
+            { "comments._id": req.body.commentId },
+            { $pull: { comments: { _id: req.body.commentId } } },
+            { new: true }
+          );
+          if (deletedComment) {
+            res.json({ success: true });
+          } else {
+            throw new Error();
+          }
+        } catch (error) {
+          res.json({ success: false, response: error.message });
+        }
+        break;
+    }
+  },
 };
 
 module.exports = itinerariosControllers;
