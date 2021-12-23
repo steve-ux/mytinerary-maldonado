@@ -132,6 +132,15 @@ margin-bottom: 1rem
 }
 .iconSend{
   margin-left: .5rem;
+  cursor: pointer;
+}
+.pencil{
+  cursor: pointer;
+  
+}
+.trash{
+  cursor: pointer;
+  margin-left: .5rem;
 }
 .activity-card{
   width: 100%;

@@ -16,6 +16,8 @@ const Itinerary = (props) => {
   const [itinerariesLikes, setItinerariesLikes] = useState(
     props.Itineraries.likes
   );
+
+  const [collapse, setCollapse] = useState(true)
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
@@ -23,6 +25,10 @@ const Itinerary = (props) => {
       setActivities(res);
     });
   }, []);
+
+  const toggleInfo = () => {
+    setCollapse(!collapse)
+}
 
   const likeItinerary = async () => {
     setLike(false);
@@ -68,8 +74,8 @@ const Itinerary = (props) => {
               <p className="datos-itinerarios">{props.Itineraries.hashtag}</p>
               <Accordion defaultActiveKey="0" flush>
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header class="d-flex align-items-center">
-                    <p>View More</p>
+                  <Accordion.Header class="d-flex align-items-center" onClick={toggleInfo}>
+                  <p>{collapse ? "View Less" : "View More"}</p>                  
                   </Accordion.Header>
                   <Accordion.Body>
                     <h2 className="title-page-activities">Activities</h2>

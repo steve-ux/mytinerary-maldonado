@@ -63,11 +63,12 @@ const Comment = (props) => {
       </div>
       <img
         width="25"
+        className="pencil"
         src={Edit}
         alt="pencil"
         onClick={() => setModifyComment(!modifyComment)}
       />
-      <img width="25" src={Delete} alt="trash" onClick={confirmDeletion} />
+      <img width="25" className="trash" src={Delete} alt="trash" onClick={confirmDeletion} />
     </div>
   );
 
